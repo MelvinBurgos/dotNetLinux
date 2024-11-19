@@ -1,0 +1,18 @@
+USE [master]
+GO
+
+CREATE DATABASE [dbTodo]
+GO
+
+USE [dbTodo]
+GO
+
+CREATE USER [usr_Todo] FOR LOGIN [usr_Todo] WITH DEFAULT_SCHEMA=[dbo]
+GO
+ALTER ROLE [db_accessadmin] ADD MEMBER [usr_Todo]
+GO
+
+CREATE TABLE Todo (
+	Id INT PRIMARY KEY IDENTITY(1, 1),
+	Name VARCHAR(255) NULL
+	)
